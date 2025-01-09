@@ -1,0 +1,58 @@
+.layout {
+  /* padding: 1rem; */
+}
+.nav-link {
+  text-decoration: none;
+  font-size: 1rem !important;
+}
+.sideNav {
+  height: 90vh;
+  /* padding: 1rem; */
+  background-color: #fff;
+
+  border: none;
+}
+
+:where(.css-dev-only-do-not-override-m4timi).ant-layout
+  .ant-layout-sider-children {
+  box-sizing: content-box;
+}
+:where(.css-dev-only-do-not-override-m4timi).ant-menu-dark {
+  background-color: transparent;
+}
+:where(.css-dev-only-do-not-override-m4timi).ant-menu-dark
+  .ant-menu-item-selected,
+:where(.css-dev-only-do-not-override-m4timi).ant-menu-dark
+  > .ant-menu
+  .ant-menu-item-selected {
+  background: none;
+  color: none;
+  font-weight: none;
+}
+
+:where(.css-dev-only-do-not-override-m4timi).ant-layout .ant-layout-sider {
+  background-color: #06175d !important;
+}
+:where(.css-m4timi).ant-layout .ant-layout-sider {
+  background-color: #06175d !important;
+}
+
+:where(.css-m4timi).ant-menu-dark {
+  background: none !important;
+}
+
+.Camera-link {
+  font-size: large;
+  font-weight: 600;
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+:where(.css-dev-only-do-not-override-m4timi).ant-menu-vertical
+  > .ant-menu-item {
+  height: 50px !important;
+}
