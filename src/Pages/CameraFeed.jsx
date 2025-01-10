@@ -6,6 +6,7 @@ import {Spin ,Switch} from "antd";
 import { ClusterContext } from "../ContextApi/clustercontext";
 import { CamDataContext } from "../ContextApi/CamDataContext";
 import { clusterMachineCameras } from "../Endpoints/ApiCall";
+import CameraStream from "./CameraStream";
 
 const CameraFeed  = () =>{
     const initialActiveState = {
@@ -38,6 +39,9 @@ try {
 }
 
 }
+
+
+
 useEffect(() => {
   let intervalId; // To store the interval ID for cleanup
 
@@ -82,6 +86,7 @@ setActiveId((prev)=>({...prev,activeSwtich:e}))
 }
 return (
 <>
+
 <div className="  text-3xl px-5 py-3 rounded-tr-lg rounded-tl-lg  font-semibold flex justify-between  items-center text-[#06175d]">
 <span className="w-1/2">
 {state_Cluster?.activeCluster?.name}
@@ -205,10 +210,11 @@ return (
 
             <div className="">
         {  
-            state_CamData.loading ? <div className="flex w-full h-[500px] justify-center items-center"><Spin/></div>  :
+            state_CamData.loading ? <div className="flex w-full h-[300px] justify-center items-center"><Spin/></div>  :
             state_CamData.data && (
-                <img src={`http://localhost:8000/api/camera/${activeId.activeCameraId}/stream/`} className="w-full h-[500px] min-h-[350px]" alt="Camera Unresponsive" />
-            )
+<CameraStream cameraId={activeId.activeCameraId}/>         
+
+)
         }
 </div> :
 <div className="flex w-full h-[500px] justify-center items-center font-bold text-2xl">
